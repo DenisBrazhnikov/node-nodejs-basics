@@ -1,12 +1,6 @@
-import {open} from 'fs/promises';
 import {Transform} from 'stream';
 
 export const transform = async () => {
-    const writeable = (
-        await open(
-            new URL('./files/fileToWrite.txt', import.meta.url), 'w+'
-        )
-    ).createWriteStream();
 
     const reverseStream = new Transform({
         transform (data, encoding, callback) {
@@ -16,7 +10,7 @@ export const transform = async () => {
         }
     });
 
-    process.stdin.pipe(reverseStream).pipe(writeable);
+    process.stdin.pipe(reverseStream).pipe(process.stdout);
 };
 
 transform();
