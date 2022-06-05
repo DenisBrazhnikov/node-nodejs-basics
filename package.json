@@ -14,7 +14,8 @@
     "cli:env": "node src/cli/env.js",
     "cli:args": "node src/cli/args.js",
     "modules:esm": "node src/modules/cjsToEsm.mjs",
-    "hash:calc": "node src/hash/calcHash.js"
+    "hash:calc": "node src/hash/calcHash.js",
+    "streams:read": "node src/streams/read.js"
   },
   "repository": {
     "type": "git",
