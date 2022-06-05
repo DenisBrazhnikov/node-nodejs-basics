@@ -7,9 +7,7 @@ export const write = async () => {
         )
     ).createWriteStream();
 
-    process.stdin.on('data', (buff) => {
-        writeable.write(buff);
-    });
+    process.stdin.pipe(writeable);
 };
 
 write();
